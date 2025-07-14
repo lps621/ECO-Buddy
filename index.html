@@ -17,6 +17,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             color: #333;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -35,6 +36,7 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .header-content {
@@ -42,6 +44,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 15px; /* Added gap for better spacing */
         }
 
         .logo {
@@ -140,6 +143,7 @@
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature-nav {
@@ -190,6 +194,7 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .chat-header {
@@ -317,7 +322,7 @@
             background: #f8f9fa;
             border-radius: 25px;
             border: 2px solid #e9ecef;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease, background 0.3s ease;
             flex-shrink: 0;
         }
 
@@ -332,6 +337,7 @@
             background: transparent;
             font-size: 16px;
             padding: 5px;
+            color: inherit; /* Inherit color from parent */
         }
 
         .input-btn {
@@ -450,7 +456,7 @@
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-card:hover {
@@ -497,7 +503,7 @@
             justify-content: center;
             margin: 20px auto;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, border-color 0.3s ease, background 0.3s ease;
         }
 
         .scan-area:hover {
@@ -514,6 +520,7 @@
             border-radius: 10px;
             margin-bottom: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .rank {
@@ -554,6 +561,157 @@
             margin: 10px 0;
             text-align: center;
         }
+
+        /* Theme Toggle Button */
+        #theme-toggle {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            background: #f0f0f0;
+            color: #333;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        #theme-toggle:hover {
+            background: #e0e0e0;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #ecf0f1;
+        }
+
+        body.dark-mode .header {
+            background: rgba(44, 62, 80, 0.95);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .logo-text {
+            color: #2ecc71; /* Green for logo in dark mode */
+        }
+
+        body.dark-mode .mode-btn:not(.active) {
+            background: #34495e;
+            color: #bdc3c7;
+        }
+
+        body.dark-mode .mode-btn:hover:not(.active) {
+            background: #4a627a;
+        }
+
+        body.dark-mode .stat-item {
+            background: rgba(46, 204, 113, 0.1);
+        }
+
+        body.dark-mode .sidebar {
+            background: rgba(44, 62, 80, 0.95);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .feature-btn {
+            background: #34495e;
+            color: #ecf0f1;
+        }
+
+        body.dark-mode .feature-btn:hover {
+            background: #4a627a;
+        }
+
+        body.dark-mode .chat-area {
+            background: rgba(44, 62, 80, 0.95);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .chat-header {
+            border-bottom-color: #4a627a;
+        }
+
+        body.dark-mode .message.ai .message-bubble {
+            background: #34495e;
+            color: #ecf0f1;
+            border-color: #4a627a;
+        }
+
+        body.dark-mode .typing-indicator {
+            background: #34495e;
+        }
+
+        body.dark-mode .typing-dot {
+            background: #bdc3c7;
+        }
+
+        body.dark-mode .chat-input {
+            background: #34495e;
+            border-color: #4a627a;
+        }
+
+        body.dark-mode .chat-input:focus-within {
+            border-color: #667eea;
+        }
+
+        body.dark-mode .project-card,
+        body.dark-mode .leaderboard-item {
+            background: #34495e;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .project-title,
+        body.dark-mode .user-name {
+            color: #ecf0f1;
+        }
+
+        body.dark-mode .project-description,
+        body.dark-mode .user-score,
+        body.dark-mode .score-label,
+        body.dark-mode .rank {
+            color: #bdc3c7;
+        }
+
+        body.dark-mode .scan-area {
+            border-color: #4a627a;
+        }
+
+        body.dark-mode .scan-area:hover {
+            background: rgba(76, 175, 80, 0.2);
+        }
+
+        body.dark-mode .score-inner {
+            background: #2c3e50;
+        }
+
+        body.dark-mode #theme-toggle {
+            background: #34495e;
+            color: #ecf0f1;
+        }
+
+        body.dark-mode #theme-toggle:hover {
+            background: #4a627a;
+        }
+
+        /* Floating and Translucent Watermark */
+        .footer-credit {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8); /* Slightly translucent white text */
+            background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
+            padding: 5px 10px;
+            border-radius: 5px;
+            opacity: 0.6; /* Overall translucency */
+            pointer-events: none; /* Allows clicks to pass through */
+            z-index: 1000; /* Ensures it stays on top */
+            transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode .footer-credit {
+            background: rgba(255, 255, 255, 0.1); /* Lighter background in dark mode */
+            color: rgba(255, 255, 255, 0.6); /* Slightly more translucent text in dark mode */
+        }
+
 
         @media (max-width: 768px) {
             .main-content {
@@ -606,6 +764,7 @@
                         🏠 General Mode
                     </button>
                 </div>
+                <button id="theme-toggle">☀️ Toggle Theme</button>
             </div>
             <div class="stats">
                 <div class="stat-item">
@@ -816,6 +975,10 @@
         </div>
     </div>
 
+    <div class="footer-credit">
+        This website is made by Tanuj Sharma, Lovely Public Sr. Sec. School
+    </div>
+
     <script>
         // Global variables
         let currentMode = 'student';
@@ -922,6 +1085,7 @@
             setupChatInput();
             setupVoiceInput();
             setupFileInput();
+            setupThemeToggle(); // Initialize theme toggle
             
             // Show initial greeting
             showInitialGreeting();
@@ -1006,6 +1170,35 @@
                     processWasteImage(file);
                 }
             });
+        }
+
+        function setupThemeToggle() {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            themeToggleBtn.addEventListener('click', toggleTheme);
+
+            // Apply saved theme on load
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggleBtn.innerHTML = '🌙 Toggle Theme';
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggleBtn.innerHTML = '☀️ Toggle Theme';
+            }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggleBtn.innerHTML = '🌙 Toggle Theme';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggleBtn.innerHTML = '☀️ Toggle Theme';
+            }
         }
 
         function switchMode(mode) {
