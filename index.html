@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>EcoBuddy - Your Environmental AI Assistant</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="js.js" type="script.js">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🌱</div>
+                    <div class="logo-text">EcoBuddy</div>
+                </div>
+                <div class="mode-selector">
+                    <button class="mode-btn student active" data-mode="student">
+                        👨‍🎓 Student Mode
+                    </button>
+                    <button class="mode-btn teacher" data-mode="teacher">
+                        👨‍🏫 Teacher Mode
+                    </button>
+                    <button class="mode-btn general" data-mode="general">
+                        🏠 General Mode
+                    </button>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span>🏆</span>
+                    <span>Eco Score: <strong id="eco-score">750</strong></span>
+                </div>
+                <div class="stat-item">
+                    <span>⭐</span>
+                    <span>Green Points: <strong id="green-points">1,250</strong></span>
+                </div>
+                <div class="stat-item">
+                    <span>🔥</span>
+                    <span>Streak: <strong>7 days</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="feature-nav">
+                    <button class="feature-btn active" data-feature="chat">
+                        <span class="feature-icon">💬</span>
+                        Chat with EcoBuddy
+                    </button>
+                    <button class="feature-btn" data-feature="calculator">
+                        <span class="feature-icon">🧮</span>
+                        Eco Score Calculator
+                    </button>
+                    <button class="feature-btn" data-feature="projects">
+                        <span class="feature-icon">💡</span>
+                        Project Ideas
+                    </button>
+                    <button class="feature-btn" data-feature="scanner">
+                        <span class="feature-icon">📷</span>
+                        Waste Scanner
+                    </button>
+                    <button class="feature-btn" data-feature="map">
+                        <span class="feature-icon">🗺️</span>
+                        Green Map
+                    </button>
+                    <button class="feature-btn" data-feature="leaderboard">
+                        <span class="feature-icon">🏆</span>
+                        Leaderboard
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-area">
+                <!-- Chat Feature -->
+                <div class="feature-content chat active">
+                    <div class="chat-header">
+                        <div class="ecobuddy-avatar">🌱</div>
+                        <div>
+                            <h3 id="chat-mode-title">EcoBuddy - Student Mode</h3>
+                            <p id="chat-mode-description">Interactive learning & fun projects</p>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Messages will be added here -->
+                    </div>
+                    <div class="chat-input">
+                        <button class="input-btn voice-btn" id="voice-btn">🎤</button>
+                        <input type="text" id="message-input" placeholder="Ask EcoBuddy anything about the environment...">
+                        <button class="input-btn send-btn" id="send-btn">➤</button>
+                    </div>
+                </div>
+
+                <!-- Eco Score Calculator -->
+                <div class="feature-content calculator">
+                    <h2>🌍 Your Eco Score</h2>
+                    <div class="eco-score-display">
+                        <div class="score-circle">
+                            <div class="score-inner">
+                                <div class="score-number">750</div>
+                                <div class="score-label">Eco Score</div>
+                            </div>
+                        </div>
+                        <p>Great job! You're above average in sustainable living.</p>
+                    </div>
+                    
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <h4>🌱 Strengths</h4>
+                            <ul>
+                                <li>Water conservation practices</li>
+                                <li>Renewable energy usage</li>
+                                <li>Waste reduction efforts</li>
+                            </ul>
+                        </div>
+                        <div class="project-card">
+                            <h4>🎯 Improvement Areas</h4>
+                            <ul>
+                                <li>Transportation choices</li>
+                                <li>Food waste reduction</li>
+                                <li>Plastic usage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Ideas -->
+                <div class="feature-content projects">
+                    <h2>💡 Eco Project Ideas</h2>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="project-title">Solar Oven</div>
+                            <div class="project-description">Build a simple solar oven using cardboard, aluminum foil, and black paper to cook food using sunlight.</div>
+                            <span class="project-difficulty difficulty-easy">Easy</span>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-title">Vertical Garden</div>
+                            <div class="project-description">Create a space-saving garden using plastic bottles and grow herbs or small vegetables vertically.</div>
+                            <span class="project-difficulty difficulty-medium">Medium</span>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-title">Rainwater Harvester</div>
+                            <div class="project-description">Design and build a system to collect and store rainwater for garden irrigation.</div>
+                            <span class="project-difficulty difficulty-hard">Hard</span>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-title">Compost Bin</div>
+                            <div class="project-description">Make a DIY compost bin to turn kitchen scraps into nutrient-rich soil for plants.</div>
+                            <span class="project-difficulty difficulty-easy">Easy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waste Scanner -->
+                <div class="feature-content scanner">
+                    <div class="waste-scanner">
+                        <h2>📷 Waste Classification Scanner</h2>
+                        <p>Upload or take a photo of waste items to get classification and disposal guidance.</p>
+                        <div class="scan-area" onclick="document.getElementById('file-input').click()">
+                            <div>
+                                <div style="font-size: 48px; margin-bottom: 10px;">📷</div>
+                                <p>Click to scan waste item</p>
+                            </div>
+                        </div>
+                        <input type="file" id="file-input" accept="image/*" style="display: none;">
+                        <div id="scan-result" style="margin-top: 20px; display: none;">
+                            <h3>Classification Result:</h3>
+                            <div id="result-content"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Green Map -->
+                <div class="feature-content map">
+                    <h2>🗺️ Green Map</h2>
+                    <p>Find nearby recycling centers, composting facilities, and eco-friendly locations.</p>
+                    <div style="height: 300px; background: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 48px; margin-bottom: 10px;">🗺️</div>
+                            <p>Interactive map will be integrated here</p>
+                        </div>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <h4>♻️ Recycling Centers</h4>
+                            <p>5 locations within 10km</p>
+                        </div>
+                        <div class="project-card">
+                            <h4>🌱 Composting Facilities</h4>
+                            <p>3 locations within 15km</p>
+                        </div>
+                        <div class="project-card">
+                            <h4>🔋 E-waste Collection</h4>
+                            <p>8 locations within 20km</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leaderboard -->
+                <div class="feature-content leaderboard">
+                    <h2>🏆 Green Heroes Leaderboard</h2>
+                    <div style="margin-top: 20px;">
+                        <div class="leaderboard-item">
+                            <div class="rank gold">1</div>
+                            <div class="user-info">
+                                <div class="user-name">🌟 EcoChampion</div>
+                                <div class="user-score">2,450 points</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank silver">2</div>
+                            <div class="user-info">
+                                <div class="user-name">🌱 GreenGuru</div>
+                                <div class="user-score">2,200 points</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank bronze">3</div>
+                            <div class="user-info">
+                                <div class="user-name">♻️ RecycleRanger</div>
+                                <div class="user-score">1,980 points</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank">4</div>
+                            <div class="user-info">
+                                <div class="user-name">🌿 You</div>
+                                <div class="user-score">1,250 points</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
